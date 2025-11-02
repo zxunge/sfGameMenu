@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <functional>
+#include <optional>
 #include <string>
 
 namespace game_menu
@@ -77,6 +78,6 @@ extern "C"
 
     game_menu::MENU* create_menu_context(sf::RenderWindow& wnd, game_menu::MenuConfig& config);
     void             menu_destroy_context(game_menu::MENU* menu);
-    void             menu_handle_event(game_menu::MENU* menu, sf::Event& event);
+    void             menu_handle_event(game_menu::MENU* menu, std::optional<sf::Event>& event);
     void             menu_render(game_menu::MENU* menu);
 }

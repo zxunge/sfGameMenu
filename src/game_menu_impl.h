@@ -37,7 +37,7 @@ public:
         std::cout << "Size of items : " << _items.size() << std::endl;
     }
 
-    void handleEvent(sf::Event& event);
+    void handleEvent(std::optional<sf::Event>& event);
     void render();
 
 private:

@@ -15,7 +15,7 @@ void menu_destroy_context(game_menu::MENU* menu)
     delete reinterpret_cast<game_menu::Menu*>(menu);
 }
 
-void menu_handle_event(game_menu::MENU* menu, sf::Event& event)
+void menu_handle_event(game_menu::MENU* menu, std::optional<sf::Event>& event)
 {
     reinterpret_cast<game_menu::Menu*>(menu)->handleEvent(event);
 }
@@ -28,7 +28,7 @@ void menu_render(game_menu::MENU* menu)
 namespace game_menu
 {
 
-void Menu::handleEvent(sf::Event& event)
+void Menu::handleEvent(std::optional<sf::Event>& event)
 {
     auto max_items = _items.size();
     if (const auto* keyPressed = event.getIf<sf::Event::KeyPressed>())
