@@ -31,7 +31,7 @@ namespace game_menu
 void Menu::handleEvent(std::optional<sf::Event>& event)
 {
     auto max_items = _items.size();
-    if (const auto* keyPressed = event.getIf<sf::Event::KeyPressed>())
+    if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
     {
         if (keyPressed->scancode == sf::Keyboard::Scancode::Up)
         {
